@@ -1,3 +1,3 @@
 # define variable(s)
 region = "europe-west2"
-zone   = "europe-west2a"
+zone   = "europe-west2-a"
