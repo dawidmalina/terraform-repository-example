@@ -96,9 +96,9 @@ jobs:
 
       # Add a comment to pull requests with plan results
       - name: add-plan-comment
+        if: github.event.pull_request.merged != true
         id: comment
         uses: actions/github-script@v6
-        if: github.event.pull_request.merged != true
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
