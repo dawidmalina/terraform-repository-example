@@ -100,15 +100,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+            const output = `#### Terraform Format and Style 🖌 \`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization ⚙️ \`${{ steps.init.outcome }}\`
+            #### Terraform Validation 🤖 \`${{ steps.validate.outcome }}\`
             <details><summary>Validation Output</summary>\n
             \`\`\`\n
             ${{ steps.validate.outputs.stdout }}
             \`\`\`
             </details>\n
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+            #### Terraform Plan 📖 \`${{ steps.plan.outcome }}\`
             <details><summary>Show Plan</summary>\n
             \`\`\`\n
             ${{ steps.plan.outputs.stdout }}
@@ -131,14 +131,14 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_project_id: ${{ secrets.TF_VAR_PROJECT_ID }}
         run: |
-          terraform apply -auto-approve -input=false
+          terraform apply -auto-approve -input=false -no-color
 
       - uses: actions/github-script@v6
         if: github.event.pull_request.merged == true
         with:
           script: |
-            const output = `#### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Apply 📖\`${{ steps.apply.outcome }}\`
+            const output = `#### Terraform Initialization ⚙️ \`${{ steps.init.outcome }}\`
+            #### Terraform Apply 📖 \`${{ steps.apply.outcome }}\`
             <details><summary>Show Apply</summary>\n
             \`\`\`\n
             ${{ steps.apply.outputs.stdout }}
