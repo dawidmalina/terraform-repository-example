@@ -10,10 +10,10 @@ on:
       - synchronize # default
       - reopened # default
       - closed # needed to handle action after merge
-  push:
-    # paths: # setup paths if necessary
-    branches:
-      - main
+  # push:
+  #   # paths: # setup paths if necessary
+  #   branches:
+  #     - main
 
 env:
   TF_LOG: INFO
