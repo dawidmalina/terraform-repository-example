@@ -5,11 +5,11 @@ on:
     # paths: # setup paths if necessary
     branches:
       - main
-    # types:
-    #   - opened # default
-    #   - synchronize # default
-    #   - reopened # default
-    #   - closed
+    types:
+      - opened # default
+      - synchronize # default
+      - reopened # default
+      - closed # needed to handle action after merge
   push:
     # paths: # setup paths if necessary
     branches:
@@ -19,7 +19,6 @@ env:
   TF_LOG: INFO
   TERRAFORM_VERSION: 1.3.7
   WORKING_DIR: ./terraform/demo # relative path under which your terraform codes are
-
 
 jobs:
   terraform:
