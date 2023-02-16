@@ -91,7 +91,6 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_project_id: ${{ secrets.TF_VAR_PROJECT_ID }}
-        if: github.event_name == 'pull_request'
         run: |
           terraform plan -no-color
 
