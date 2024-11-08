@@ -1,3 +1,9 @@
+resource "random_uuid" "test" {}
+
+output "test" {
+    value = random_uuid.test.result
+}
+
 # create demo network
 # resource "google_compute_network" "vpc_network" {
 #   name = "demo-vpc-network"
