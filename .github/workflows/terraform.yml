@@ -4,7 +4,7 @@ on:
   pull_request:
     # paths: # setup paths if necessary
     branches:
-      - main
+      - none # main
     types:
       - opened # default
       - synchronize # default
