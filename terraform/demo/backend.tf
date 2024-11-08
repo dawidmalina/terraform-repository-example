@@ -1,6 +1,9 @@
 terraform {
-  backend "gcs" {
-    bucket = "dawidmalina-terraform-repository-example"
-    prefix = "terraform/state"
+  backend "remote" {
+    hostname = "terrakube-api.svc.fiplana.com"
+    organization = "test"
+    workspaces {
+      name = "terraform-repository-example-demo"
+    }
   }
 }
