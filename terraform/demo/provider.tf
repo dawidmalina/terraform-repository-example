@@ -1,10 +1,10 @@
-provider "google" {
-  project = var.project_id
-  region  = var.region
-  zone    = var.zone
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.6.0"
+    }
+  }
 }
-provider "google-beta" {
-  project = var.project_id
-  region  = var.region
-  zone    = var.zone
-}
+
+provider "random" {}
